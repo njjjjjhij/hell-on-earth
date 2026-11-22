@@ -1,0 +1,24 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1280
+PlayResY: 720
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: HeroTitle,Oswald,104,&H00D1E2E8,&H00D1E2E8,&H00101010,&H80000000,-1,0,0,0,100,100,3,0,1,0,4,5,0,0,0,1
+Style: HeroKicker,Rajdhani SemiBold,25,&H005AA4C8,&H005AA4C8,&H00101010,&H80000000,-1,0,0,0,100,100,5,0,1,0,2,5,0,0,0,1
+Style: HeroSub,Rajdhani SemiBold,30,&H00D1E2E8,&H00D1E2E8,&H00101010,&H80000000,-1,0,0,0,100,100,2,0,1,0,2,5,0,0,0,1
+Style: HeroTag,Rajdhani SemiBold,21,&H005AA4C8,&H005AA4C8,&H00101010,&H80000000,-1,0,0,0,100,100,3,0,1,0,2,5,0,0,0,1
+Style: Kicker,Rajdhani SemiBold,23,&H005AA4C8,&H005AA4C8,&H00101010,&H80000000,-1,0,0,0,100,100,4,0,1,0,2,7,0,0,0,1
+Style: CapTitle,Oswald,46,&H00D1E2E8,&H00D1E2E8,&H00101010,&H80000000,-1,0,0,0,100,100,2,0,1,0,3,7,0,0,0,1
+Style: CapSub,Rajdhani SemiBold,24,&H00A9BDC4,&H00A9BDC4,&H00101010,&H80000000,-1,0,0,0,100,100,2,0,1,0,2,7,0,0,0,1
+Style: Small,Rajdhani SemiBold,16,&H006B8D8B,&H006B8D8B,&H00101010,&H80000000,-1,0,0,0,100,100,4,0,1,0,1,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:06.00,HeroKicker,,0,0,0,,{\pos(640,236)\fad(400,300)}DOG PRODUCTIVE PRESENTS
+Dialogue: 0,0:00:00.00,0:00:06.00,HeroTitle,,0,0,0,,{\pos(640,318)\fad(450,300)}HELL ON EARTH
+Dialogue: 0,0:00:00.00,0:00:06.00,HeroSub,,0,0,0,,{\pos(640,414)\fad(500,300)}30 VS 30 COMBINED ARMS
+Dialogue: 0,0:00:00.00,0:00:06.00,HeroTag,,0,0,0,,{\pos(640,462)\fad(550,300)}BETA 0.9.0 · PC AND MOBILE

@@ -1,0 +1,24 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1280
+PlayResY: 720
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: HeroTitle,Oswald,104,&H00D1E2E8,&H00D1E2E8,&H00101010,&H80000000,-1,0,0,0,100,100,3,0,1,0,4,5,0,0,0,1
+Style: HeroKicker,Rajdhani SemiBold,25,&H005AA4C8,&H005AA4C8,&H00101010,&H80000000,-1,0,0,0,100,100,5,0,1,0,2,5,0,0,0,1
+Style: HeroSub,Rajdhani SemiBold,30,&H00D1E2E8,&H00D1E2E8,&H00101010,&H80000000,-1,0,0,0,100,100,2,0,1,0,2,5,0,0,0,1
+Style: HeroTag,Rajdhani SemiBold,21,&H005AA4C8,&H005AA4C8,&H00101010,&H80000000,-1,0,0,0,100,100,3,0,1,0,2,5,0,0,0,1
+Style: Kicker,Rajdhani SemiBold,23,&H005AA4C8,&H005AA4C8,&H00101010,&H80000000,-1,0,0,0,100,100,4,0,1,0,2,7,0,0,0,1
+Style: CapTitle,Oswald,46,&H00D1E2E8,&H00D1E2E8,&H00101010,&H80000000,-1,0,0,0,100,100,2,0,1,0,3,7,0,0,0,1
+Style: CapSub,Rajdhani SemiBold,24,&H00A9BDC4,&H00A9BDC4,&H00101010,&H80000000,-1,0,0,0,100,100,2,0,1,0,2,7,0,0,0,1
+Style: Small,Rajdhani SemiBold,16,&H006B8D8B,&H006B8D8B,&H00101010,&H80000000,-1,0,0,0,100,100,4,0,1,0,1,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:05.00,Kicker,,0,0,0,,{\pos(92,512)\fad(400,300)}ARMORY
+Dialogue: 0,0:00:00.00,0:00:05.00,CapTitle,,0,0,0,,{\pos(90,548)\fad(420,300)}BUILD YOUR WEAPON.
+Dialogue: 0,0:00:00.00,0:00:05.00,CapSub,,0,0,0,,{\pos(92,612)\fad(440,300)}FIVE PLATFORMS · FOUR ATTACHMENT SLOTS
+Dialogue: 0,0:00:00.00,0:00:05.00,Small,,0,0,0,,{\pos(92,656)\fad(460,300)}HELL ON EARTH · BETA 0.9.0

@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+<title>HELL ON EARTH — 30v30 Combined Arms | Dog Productive</title>
+<meta name="description" content="HELL ON EARTH — a 30 vs 30 combined-arms browser FPS. Pick your side, pick your operator, take the ruined city. Beta 0.9.0." />
+<meta name="theme-color" content="#0a0b09" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/src/style.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230a0b09'/><path d='M22 74V26h16l12 22 12-22h16v48H62V53L50 74 38 53v21z' fill='%23c8a45a'/></svg>" />
+</head>
+<body>
+<div id="app">
+  <canvas id="gl"></canvas>
+
+  <!-- ================= INTRO / CINEMATIC ================= -->
+  <section id="intro" class="screen">
+    <div id="flash"></div>
+    <div id="logo-card">
+      <div class="dp-mark">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 54V10h20l8 7 8-7h12v44H42V32l-6 5-6-5v22z" fill="currentColor"/></svg>
+      </div>
+      <h1 class="dp-name">DOG PRODUCTIVE</h1>
+      <p class="dp-sub">A GAME STUDIO &nbsp;·&nbsp; EST. 2026</p>
+      <div class="dp-line"></div>
+    </div>
+    <div id="cinema-bars"><span class="bar top"></span><span class="bar bottom"></span></div>
+    <div id="cinema-caption"></div>
+    <button id="skip-intro" class="ghost-btn">SKIP INTRO <kbd>ESC</kbd></button>
+  </section>
+
+  <!-- ================= MAIN MENU ================= -->
+  <section id="menu" class="screen hidden">
+    <div class="menu-grid">
+      <div class="menu-left">
+        <div class="beta-chip">BETA <span>v0.9.0</span></div>
+        <h1 class="game-title"><span>HELL</span><span>ON EARTH</span></h1>
+        <p class="tagline">30 vs 30 combined arms · destroyed city · no reinforcements</p>
+        <nav class="menu-nav">
+          <button class="menu-btn primary" data-go="faction"><em>01</em> PLAY</button>
+          <button class="menu-btn" data-go="customize"><em>02</em> CUSTOMIZE WEAPON</button>
+          <button class="menu-btn" data-go="settings"><em>03</em> SETTINGS</button>
+          <button class="menu-btn" data-go="credits"><em>04</em> CREDITS</button>
+        </nav>
+        <div class="menu-foot">
+          <span>DOG PRODUCTIVE PRESENTS</span>
+          <span id="build-stamp">BUILD 0.9.0-BETA</span>
+        </div>
+      </div>
+      <div class="menu-right">
+        <div class="devpick">
+          <h3>SERVICE RECORD</h3>
+          <div id="profile-card">
+            <div class="rank">PVT</div>
+            <div class="pinfo"><strong>OPERATOR</strong><span id="profile-op">Rifleman</span></div>
+            <div class="pinfo"><strong>LOADOUT</strong><span id="profile-gun">AK-74M</span></div>
+          </div>
+          <p class="dev-note">Beta build — bots fill both teams. Vehicles are enterable and drivable. Voice comms are live.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FACTION ================= -->
+  <section id="faction" class="screen hidden">
+    <header class="screen-head">
+      <button class="back-btn" data-back="menu">◀ BACK</button>
+      <h2>CHOOSE YOUR SIDE</h2>
+      <span class="head-sub">30 vs 30 · ASSAULT ON THE CITY</span>
+    </header>
+    <div class="faction-wrap">
+      <button class="faction-card ua" data-side="ua">
+        <div class="flag"><span class="blue"></span><span class="yellow"></span></div>
+        <h3>UKRAINE</h3>
+        <p class="fsub">Armed Forces · Urban Defense</p>
+        <ul>
+          <li>Blue armband identification</li>
+          <li>Spawns south of the river</li>
+          <li>Faster light vehicles</li>
+        </ul>
+        <span class="choose">DEPLOY AS UKRAINE</span>
+      </button>
+      <div class="vs">VS</div>
+      <button class="faction-card ru" data-side="ru">
+        <div class="flag"><span class="white"></span><span class="blue"></span><span class="red"></span></div>
+        <h3>RUSSIA</h3>
+        <p class="fsub">Motor Rifle Forces · Armored Push</p>
+        <ul>
+          <li>Red armband identification</li>
+          <li>Spawns north of the industrial belt</li>
+          <li>Heavier armor support</li>
+        </ul>
+        <span class="choose">DEPLOY AS RUSSIA</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ================= OPERATOR SELECT ================= -->
+  <section id="operator" class="screen hidden">
+    <header class="screen-head">
+      <button class="back-btn" data-back="faction">◀ BACK</button>
+      <h2>SELECT OPERATOR</h2>
+      <span class="head-sub" id="op-side-label">UKRAINE</span>
+    </header>
+    <div class="op-wrap">
+      <div id="op-list" class="op-list"></div>
+      <aside class="op-detail">
+        <h3 id="op-name">RIFLEMAN</h3>
+        <p id="op-role">Line infantry</p>
+        <p id="op-desc"></p>
+        <div class="op-stats" id="op-stats"></div>
+        <div class="op-ability"><strong>ABILITY</strong><span id="op-ability"></span></div>
+        <div class="control-pick">
+          <strong>CONTROLS</strong>
+          <div class="seg">
+            <button class="seg-btn active" data-controls="pc">PC / KEYBOARD</button>
+            <button class="seg-btn" data-controls="mobile">MOBILE / TOUCH</button>
+          </div>
+        </div>
+        <button id="deploy-btn" class="deploy">DEPLOY TO CITY</button>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ================= CUSTOMIZE ================= -->
+  <section id="customize" class="screen hidden">
+    <header class="screen-head">
+      <button class="back-btn" data-back="menu">◀ BACK</button>
+      <h2>CUSTOMIZE WEAPON</h2>
+      <span class="head-sub">ARMORY · PRIMARY PLATFORM</span>
+    </header>
+    <div class="custom-wrap">
+      <div class="gun-list" id="gun-list"></div>
+      <div class="gun-stage">
+        <div class="stage-glow"></div>
+        <div id="gun-preview-3d" class="stage-3d"></div>
+        <div class="gun-title"><h3 id="gun-title">AK-74M</h3><span id="gun-class">ASSAULT RIFLE</span></div>
+        <div class="gun-stats" id="gun-stats"></div>
+      </div>
+      <aside class="attach">
+        <h4>ATTACHMENTS</h4>
+        <div class="attach-row"><label>OPTIC</label><div class="chips" id="attach-optic"></div></div>
+        <div class="attach-row"><label>MUZZLE</label><div class="chips" id="attach-muzzle"></div></div>
+        <div class="attach-row"><label>MAG</label><div class="chips" id="attach-mag"></div></div>
+        <div class="attach-row"><label>FINISH</label><div class="chips" id="attach-skin"></div></div>
+        <div class="attach-note">Attachments change recoil, mag size and muzzle flash in-match.</div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ================= SETTINGS ================= -->
+  <section id="settings" class="screen hidden">
+    <header class="screen-head">
+      <button class="back-btn" data-back="menu">◀ BACK</button>
+      <h2>SETTINGS</h2>
+      <span class="head-sub">SYSTEM</span>
+    </header>
+    <div class="settings-wrap">
+      <label class="set-row">MOUSE SENSITIVITY <input type="range" id="set-sens" min="0.3" max="2.5" step="0.05" value="1" /><output id="set-sens-out">1.00</output></label>
+      <label class="set-row">FIELD OF VIEW <input type="range" id="set-fov" min="60" max="105" step="1" value="78" /><output id="set-fov-out">78</output></label>
+      <label class="set-row">MASTER VOLUME <input type="range" id="set-vol" min="0" max="1" step="0.05" value="0.8" /><output id="set-vol-out">80</output></label>
+      <label class="set-row">GRAPHICS QUALITY <select id="set-quality"><option value="high">HIGH</option><option value="med" selected>MEDIUM</option><option value="low">LOW</option></select></label>
+      <label class="set-row">SHOW FPS <select id="set-fps"><option value="no">NO</option><option value="yes">YES</option></select></label>
+      <button id="set-reset" class="ghost-btn">RESET TO DEFAULTS</button>
+    </div>
+  </section>
+
+  <!-- ================= CREDITS ================= -->
+  <section id="credits" class="screen hidden">
+    <header class="screen-head">
+      <button class="back-btn" data-back="menu">◀ BACK</button>
+      <h2>CREDITS</h2>
+      <span class="head-sub">DOG PRODUCTIVE</span>
+    </header>
+    <div class="credits-wrap">
+      <p><strong>HELL ON EARTH</strong> — Beta 0.9.0</p>
+      <p>A Dog Productive production. Built in the browser with three.js.</p>
+      <ul>
+        <li><b>Creative direction &amp; code</b> — Dog Productive</li>
+        <li><b>Character, weapon &amp; vehicle modelling</b> — in-house low-poly pipeline</li>
+        <li><b>Voice comms &amp; announcer</b> — ElevenLabs voice synthesis</li>
+        <li><b>Sound design</b> — procedural WebAudio synthesis</li>
+      </ul>
+      <p class="legal">This is a fictional video game. All soldiers, units and events depicted are fictional. No real persons or conflicts are represented. Voice lines are synthesized.</p>
+    </div>
+  </section>
+
+  <!-- ================= HUD ================= -->
+  <div id="hud" class="hidden">
+    <div id="damage-vignette"></div>
+    <div id="crosshair"><span class="ch" data-dir="t"></span><span class="ch" data-dir="b"></span><span class="ch" data-dir="l"></span><span class="ch" data-dir="r"></span><span class="dot"></span></div>
+    <div id="hitmarker">✕</div>
+
+    <div id="topbar">
+      <div class="team ua"><span class="tname">UKRAINE</span><span class="tscore" id="score-ua">250</span></div>
+      <div class="mid"><div id="match-time">15:00</div><div class="sector"><span id="sector-fill"></span></div><div class="mode">ASSAULT · 30v30</div></div>
+      <div class="team ru"><span class="tscore" id="score-ru">250</span><span class="tname">RUSSIA</span></div>
+    </div>
+
+    <div id="killfeed"></div>
+    <div id="radio-log"></div>
+
+    <div id="minimap-wrap"><canvas id="minimap" width="220" height="220"></canvas><div class="mm-label">CITY SECTOR 7</div></div>
+
+    <div id="vitals">
+      <div class="hp"><i id="hp-fill"></i><span id="hp-text">100</span></div>
+      <div class="op-tag"><b id="hud-op">RIFLEMAN</b><span id="hud-team">UKRAINE</span></div>
+      <div class="abil"><span id="abil-key">Q</span><i id="abil-fill"></i><em id="abil-name">ADRENALINE</em></div>
+    </div>
+
+    <div id="ammo-panel">
+      <div id="weapon-name">AK-74M</div>
+      <div class="ammo-line"><span id="ammo-mag">30</span><span class="sep">/</span><span id="ammo-res">120</span></div>
+      <div class="ammo-foot"><span id="fire-mode">AUTO</span><span id="reload-hint">R RELOAD</span></div>
+    </div>
+
+    <div id="vehicle-hud" class="hidden">
+      <div class="vh-name" id="vh-name">T-72</div>
+      <div class="vh-speed"><span id="vh-speed">0</span> <em>KM/H</em></div>
+      <div class="vh-hint" id="vh-hint">SPACE — FIRE MAIN GUN · F — EXIT</div>
+    </div>
+
+    <div id="prompt" class="hidden"></div>
+    <div id="subtitles"></div>
+    <div id="objective">ADVANCE TO THE CENTRE · CAPTURE THE SECTOR</div>
+    <div id="fps-counter" class="hidden">0 FPS</div>
+
+    <!-- MOBILE -->
+    <div id="mobile" class="hidden">
+      <div class="stick-zone" id="stick-zone"><div class="stick-base" id="stick-base"><div class="stick-knob" id="stick-knob"></div></div></div>
+      <div class="look-zone" id="look-zone"></div>
+      <button class="mbtn fire" id="m-fire">FIRE</button>
+      <button class="mbtn jump" id="m-jump">JUMP</button>
+      <button class="mbtn reload" id="m-reload">RELOAD</button>
+      <button class="mbtn enter" id="m-enter">ENTER</button>
+      <button class="mbtn swap" id="m-swap">SWAP</button>
+      <button class="mbtn abil" id="m-abil">ABILITY</button>
+      <button class="mbtn pause" id="m-pause">II</button>
+    </div>
+  </div>
+
+  <!-- ================= END SCREEN ================= -->
+  <div id="end" class="screen hidden">
+    <div class="end-card">
+      <div class="end-banner" id="end-banner">VICTORY</div>
+      <p class="end-sub" id="end-sub">UKRAINE HOLDS THE CITY</p>
+      <div class="end-stats">
+        <div><b id="st-kills">0</b><span>ELIMINATIONS</span></div>
+        <div><b id="st-deaths">0</b><span>DEATHS</span></div>
+        <div><b id="st-veh">0</b><span>VEHICLES DESTROYED</span></div>
+        <div><b id="st-score">0</b><span>SCORE</span></div>
+      </div>
+      <div class="end-actions">
+        <button id="rematch" class="deploy">RE-DEPLOY</button>
+        <button id="to-menu" class="ghost-btn">MAIN MENU</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= PAUSE ================= -->
+  <div id="pause" class="screen hidden">
+    <div class="pause-card">
+      <h2>PAUSED</h2>
+      <button id="resume" class="deploy">RESUME</button>
+      <button class="ghost-btn" data-back="menu" id="quit">ABANDON MISSION</button>
+      <p class="small">HELL ON EARTH · BETA 0.9.0</p>
+    </div>
+  </div>
+
+  <div id="loader" class="screen">
+    <div class="load-inner">
+      <div class="load-logo">DOG PRODUCTIVE</div>
+      <div class="load-bar"><i id="load-fill"></i></div>
+      <div class="load-text" id="load-text">INITIALIZING</div>
+    </div>
+  </div>
+</div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

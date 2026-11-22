@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HELL ON EARTH — 30v30 Combined Arms FPS | Dog Productive</title>
+<meta name="description" content="HELL ON EARTH is a 30 vs 30 combined-arms browser FPS. Six operators, working tanks, ATVs and transports, a destroyed city, and sixty soldiers fighting for one sector. Beta 0.9.0 by Dog Productive." />
+<meta name="theme-color" content="#0a0b09" />
+<meta property="og:title" content="HELL ON EARTH — 30v30 Combined Arms" />
+<meta property="og:description" content="Pick Ukraine or Russia. Six operators. Working armour. A destroyed city. Beta 0.9.0." />
+<meta property="og:image" content="assets/hero.jpg" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230a0b09'/><path d='M22 74V26h16l12 22 12-22h16v48H62V53L50 74 38 53v21z' fill='%23c8a45a'/></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="nav" id="nav">
+  <a class="brand" href="#top">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 54V10h20l8 7 8-7h12v44H42V32l-6 5-6-5v22z" fill="currentColor"/></svg>
+    <span>DOG PRODUCTIVE</span>
+  </a>
+  <nav class="navlinks">
+    <a href="#overview">OVERVIEW</a>
+    <a href="#operators">OPERATORS</a>
+    <a href="#vehicles">VEHICLES</a>
+    <a href="#armory">ARMORY</a>
+    <a href="#beta">BETA</a>
+  </nav>
+  <div class="nav-actions">
+    <span class="beta-chip">BETA <b>0.9.0</b></span>
+    <a class="btn small" href="play/">PLAY BETA</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image:url('assets/hero.jpg')"></div>
+    <div class="hero-fade"></div>
+    <div class="hero-inner">
+      <div class="hero-kicker"><span class="dot"></span> A DOG PRODUCTIVE PRODUCTION · BETA 0.9.0</div>
+      <h1 class="hero-title"><span>HELL</span><span>ON EARTH</span></h1>
+      <p class="hero-sub">30 vs 30 combined arms. A destroyed city. Sixty soldiers, six operators and working armour. No reinforcements beyond the rally point.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="play/">DEPLOY NOW <em>FREE · BROWSER</em></a>
+        <a class="btn ghost" href="#trailer">WATCH TRAILER</a>
+      </div>
+      <ul class="hero-facts">
+        <li><b>PC + MOBILE</b><span>Pick your controls at deploy</span></li>
+        <li><b>60 COMBATANTS</b><span>You + 59 bots, both sides</span></li>
+        <li><b>WORKING ARMOUR</b><span>Tanks, ATVs, transports</span></li>
+        <li><b>LIVE COMMS</b><span>Squad voice lines &amp; announcer</span></li>
+      </ul>
+    </div>
+    <div class="scroll-hint">SCROLL <span></span></div>
+  </section>
+
+  <!-- STRIP -->
+  <section class="strip">
+    <div><b>30 v 30</b><span>ASSAULT</span></div>
+    <div><b>6</b><span>OPERATORS</span></div>
+    <div><b>8</b><span>VEHICLES PER MATCH</span></div>
+    <div><b>15:00</b><span>MATCH CLOCK</span></div>
+    <div><b>250</b><span>TICKETS PER SIDE</span></div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section" id="overview">
+    <div class="sec-head">
+      <span class="num">01</span>
+      <h2>THE CITY IS THE BATTLEFIELD</h2>
+      <p>Sector 7 — a ruined urban grid with two clear boulevards, collapsed housing blocks, a contested central plaza and enough cover to make every street a decision.</p>
+    </div>
+    <div class="split">
+      <figure class="shot reveal">
+        <img src="assets/combat.png" alt="Thirty versus thirty soldiers fighting around the central plaza flag" loading="lazy" />
+        <figcaption>SECTOR 7 · CENTRAL PLAZA · LIVE MATCH</figcaption>
+      </figure>
+      <div class="copy reveal">
+        <h3>Pick a side. Take the centre.</h3>
+        <p>Choose <b>Ukraine</b> or <b>Russia</b>, then an operator, then your controls. You spawn at the rally point with twenty-nine bots on your side and thirty on theirs. Every death costs your team a ticket. When the clock runs out, the side holding more tickets owns the city.</p>
+        <ul class="ticks">
+          <li>Two teams of 30 — you plus 59 AI soldiers</li>
+          <li>Central capture sector with a live frontline meter</li>
+          <li>Kill feed, squad radio and command subtitles</li>
+          <li>Client-side match sim — no install, no launcher</li>
+        </ul>
+        <div class="team-row">
+          <div class="team ua"><i></i><b>UKRAINE</b><span>Blue armband · southern rally</span></div>
+          <div class="team ru"><i></i><b>RUSSIA</b><span>Red armband · northern rally</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPERATORS -->
+  <section class="section dark" id="operators">
+    <div class="sec-head">
+      <span class="num">02</span>
+      <h2>SIX OPERATORS. SIX WAYS TO FIGHT.</h2>
+      <p>Every operator carries a distinct primary and a squad ability on a cooldown. Pick the role your team is missing.</p>
+    </div>
+    <div class="op-grid">
+      <article class="op reveal">
+        <div class="op-top"><span class="op-ic">▲</span><span class="op-role">LINE INFANTRY</span></div>
+        <h3>RIFLEMAN</h3>
+        <p>Balanced armour and the AK-74M. The soldier you want holding the line.</p>
+        <div class="ability"><b>ADRENALINE</b><span>+35 HP, +30% speed · 6s</span></div>
+        <div class="bars"><i style="--v:74%"></i><i style="--v:70%"></i><i style="--v:66%"></i><i style="--v:40%"></i></div>
+      </article>
+      <article class="op reveal">
+        <div class="op-top"><span class="op-ic">▦</span><span class="op-role">SUPPRESSION</span></div>
+        <h3>GUNNER</h3>
+        <p>PKM, one hundred rounds, and the armour to stand still while firing.</p>
+        <div class="ability"><b>OVERCHARGE</b><span>No ammo drain · 10s</span></div>
+        <div class="bars"><i style="--v:96%"></i><i style="--v:46%"></i><i style="--v:82%"></i><i style="--v:30%"></i></div>
+      </article>
+      <article class="op reveal">
+        <div class="op-top"><span class="op-ic">✛</span><span class="op-role">LONG RANGE RECON</span></div>
+        <h3>MARKSMAN</h3>
+        <p>SVD-M. Fragile up close, lethal from one end of the boulevard to the other.</p>
+        <div class="ability"><b>FOCUS</b><span>Zero spread, +40% damage · 7s</span></div>
+        <div class="bars"><i style="--v:92%"></i><i style="--v:58%"></i><i style="--v:48%"></i><i style="--v:62%"></i></div>
+      </article>
+      <article class="op reveal">
+        <div class="op-top"><span class="op-ic">◈</span><span class="op-role">RECON &amp; EW</span></div>
+        <h3>DRONE OPERATOR</h3>
+        <p>Fast, lightly armoured, and the only operator who sees the whole sector.</p>
+        <div class="ability"><b>RECON DRONE</b><span>Reveal all enemies · 15s</span></div>
+        <div class="bars"><i style="--v:56%"></i><i style="--v:84%"></i><i style="--v:52%"></i><i style="--v:98%"></i></div>
+      </article>
+      <article class="op reveal">
+        <div class="op-top"><span class="op-ic">▣</span><span class="op-role">ARMOUR · DRIVER</span></div>
+        <h3>TANK DRIVER</h3>
+        <p>Keeps the armour alive. Repairs tracks and hull in the middle of a firefight.</p>
+        <div class="ability"><b>FIELD REPAIR</b><span>+70% vehicle hull, +25 HP</span></div>
+        <div class="bars"><i style="--v:70%"></i><i style="--v:78%"></i><i style="--v:74%"></i><i style="--v:78%"></i></div>
+      </article>
+      <article class="op reveal">
+        <div class="op-top"><span class="op-ic">★</span><span class="op-role">ARMOUR · COMMAND</span></div>
+        <h3>TANK COMMANDER</h3>
+        <p>Heavy plate and the authority to flatten a grid square with artillery.</p>
+        <div class="ability"><b>ARMOR BARRAGE</b><span>Six-round barrage</span></div>
+        <div class="bars"><i style="--v:84%"></i><i style="--v:54%"></i><i style="--v:88%"></i><i style="--v:86%"></i></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- VEHICLES -->
+  <section class="section" id="vehicles">
+    <div class="sec-head">
+      <span class="num">03</span>
+      <h2>ARMOUR THAT ACTUALLY MOVES</h2>
+      <p>Walk up, press <kbd>F</kbd>, and drive. Turrets track your aim, main guns shake the camera, and wrecks respawn after thirty seconds.</p>
+    </div>
+    <div class="veh-grid">
+      <article class="veh reveal">
+        <div class="veh-head"><span>T-64BM / T-72B3</span><b>MAIN BATTLE TANK</b></div>
+        <ul>
+          <li><span>HULL</span><b>1400</b></li>
+          <li><span>MAIN GUN</span><b>125 MM</b></li>
+          <li><span>TOP SPEED</span><b>40 KM/H</b></li>
+          <li><span>CREW</span><b>2</b></li>
+        </ul>
+        <p>Coaxial machine gun on the mouse, main gun on <kbd>SPACE</kbd>. A direct hit clears an infantry squad.</p>
+      </article>
+      <article class="veh reveal">
+        <div class="veh-head"><span>QUAD-ATV</span><b>LIGHT RECON</b></div>
+        <ul>
+          <li><span>HULL</span><b>320</b></li>
+          <li><span>WEAPON</span><b>7.62 MG</b></li>
+          <li><span>TOP SPEED</span><b>61 KM/H</b></li>
+          <li><span>CREW</span><b>2</b></li>
+        </ul>
+        <p>Fast enough to flank the plaza before the enemy armour turns its turret.</p>
+      </article>
+      <article class="veh reveal">
+        <div class="veh-head"><span>MT-LB</span><b>ARMOURED TRANSPORT</b></div>
+        <ul>
+          <li><span>HULL</span><b>700</b></li>
+          <li><span>WEAPON</span><b>7.62 MG</b></li>
+          <li><span>TOP SPEED</span><b>43 KM/H</b></li>
+          <li><span>CREW</span><b>6</b></li>
+        </ul>
+        <p>Six seats, a shielded gun and enough steel to push a street with infantry behind it.</p>
+      </article>
+    </div>
+    <figure class="shot wide reveal">
+      <img src="assets/city.png" alt="The main boulevard of the destroyed city with tanks in the distance" loading="lazy" />
+      <figcaption>THE SOUTH BOULEVARD · ARMOUR STAGING</figcaption>
+    </figure>
+  </section>
+
+  <!-- ARMORY -->
+  <section class="section dark" id="armory">
+    <div class="sec-head">
+      <span class="num">04</span>
+      <h2>BUILD THE GUN YOU WANT</h2>
+      <p>Every primary platform takes an optic, muzzle device, magazine and finish. The armory previews the real in-match model, recoil and magazine size.</p>
+    </div>
+    <div class="split armory">
+      <div class="copy reveal">
+        <h3>Five primaries. Four attachment slots.</h3>
+        <table class="gun-table">
+          <thead><tr><th>PLATFORM</th><th>CLASS</th><th>MAG</th></tr></thead>
+          <tbody>
+            <tr><td>AK-74M</td><td>Assault rifle</td><td>30</td></tr>
+            <tr><td>PKM</td><td>Machine gun</td><td>100</td></tr>
+            <tr><td>SVD-M</td><td>Marksman</td><td>10</td></tr>
+            <tr><td>MP5-K</td><td>SMG</td><td>30</td></tr>
+            <tr><td>RPG-7</td><td>Anti-vehicle</td><td>1</td></tr>
+          </tbody>
+        </table>
+        <ul class="ticks">
+          <li>Iron sights, red dot or 4× scope</li>
+          <li>Muzzle brake or suppressor</li>
+          <li>Standard, extended or drum magazine</li>
+          <li>Wood, black, tan or olive finish</li>
+        </ul>
+      </div>
+      <figure class="shot reveal">
+        <img src="assets/armory.png" alt="Weapon customization screen with a 3D AK-74M preview" loading="lazy" />
+        <figcaption>ARMORY · PRIMARY PLATFORM CONFIGURATION</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CONTROLS -->
+  <section class="section" id="controls">
+    <div class="sec-head">
+      <span class="num">05</span>
+      <h2>YOUR SETUP. YOUR CONTROLS.</h2>
+      <p>Choose keyboard and mouse or full touch controls before you deploy. The game adapts the HUD, sticks and buttons to the choice.</p>
+    </div>
+    <div class="controls-grid">
+      <div class="ctrl-card reveal">
+        <h3>PC / KEYBOARD</h3>
+        <ul class="keys">
+          <li><kbd>W A S D</kbd><span>Move</span></li>
+          <li><kbd>SHIFT</kbd><span>Sprint</span></li>
+          <li><kbd>SPACE</kbd><span>Jump / main gun</span></li>
+          <li><kbd>LMB</kbd><span>Fire</span></li>
+          <li><kbd>RMB</kbd><span>Aim down sights</span></li>
+          <li><kbd>R</kbd><span>Reload</span></li>
+          <li><kbd>F</kbd><span>Enter / exit vehicle</span></li>
+          <li><kbd>Q</kbd><span>Operator ability</span></li>
+          <li><kbd>V</kbd><span>Call for ammo</span></li>
+          <li><kbd>1 2</kbd><span>Primary / sidearm</span></li>
+        </ul>
+      </div>
+      <div class="ctrl-card reveal">
+        <h3>MOBILE / TOUCH</h3>
+        <ul class="keys mobilekeys">
+          <li><span class="pad">◉</span><span>Left stick to move</span></li>
+          <li><span class="pad">↔</span><span>Right side to look</span></li>
+          <li><span class="pad">FIRE</span><span>Hold to shoot</span></li>
+          <li><span class="pad">RELOAD</span><span>Reload</span></li>
+          <li><span class="pad">ENTER</span><span>Vehicle</span></li>
+          <li><span class="pad">SWAP</span><span>Weapon</span></li>
+          <li><span class="pad">ABILITY</span><span>Operator ability</span></li>
+        </ul>
+        <p class="note">Touch layout appears only when Mobile is selected. Landscape is recommended.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAILER -->
+  <section class="section dark trailer" id="trailer">
+    <div class="sec-head">
+      <span class="num">06</span>
+      <h2>WATCH THE TRAILER</h2>
+      <p>Thirty seconds in Sector 7 — the pitch, the armour and the problem with running dry.</p>
+    </div>
+    <div class="video-wrap reveal">
+      <video id="trailer-video" poster="assets/hero.jpg" controls preload="metadata" playsinline>
+        <source src="assets/trailer.mp4" type="video/mp4" />
+        Your browser does not support embedded video.
+      </video>
+      <div class="video-grain"></div>
+    </div>
+    <p class="video-note">Narration synthesized with ElevenLabs. Footage captured in-engine.</p>
+  </section>
+
+  <!-- BETA -->
+  <section class="section" id="beta">
+    <div class="sec-head">
+      <span class="num">07</span>
+      <h2>BETA 0.9.0 — WHAT YOU ARE PLAYING</h2>
+      <p>This is an openly labelled beta. The systems below are complete; the list after them is what we are still pushing on.</p>
+    </div>
+    <div class="beta-grid">
+      <div class="beta-card reveal">
+        <h3>IN THE BUILD</h3>
+        <ul class="ticks">
+          <li>30 vs 30 bots with objective movement and cover</li>
+          <li>Six operators with working abilities</li>
+          <li>Tanks, ATVs and transports with turrets</li>
+          <li>Five primaries, pistol, four attachment slots</li>
+          <li>PC and mobile control schemes</li>
+          <li>Voice comms when a soldier loses their weapon</li>
+          <li>Opening cinematic and mission results</li>
+        </ul>
+      </div>
+      <div class="beta-card warn reveal">
+        <h3>STILL IN PROGRESS</h3>
+        <ul class="ticks warn">
+          <li>No online multiplayer yet — both sides are bots</li>
+          <li>No progression, unlocks or persistent stats</li>
+          <li>Weapon and vehicle balance is still being tuned</li>
+          <li>Character models are hand-built low-poly (no external model pipeline)</li>
+          <li>Performance targets vary by device</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cta-band reveal">
+      <div>
+        <h3>READY TO DEPLOY?</h3>
+        <p>The full beta runs in your browser. No download, no account.</p>
+      </div>
+      <a class="btn primary" href="play/">PLAY HELL ON EARTH</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section dark faq" id="faq">
+    <div class="sec-head"><span class="num">08</span><h2>BRIEFING</h2></div>
+    <details><summary>Is HELL ON EARTH free?</summary><p>Yes. The beta is free to play in a modern desktop or mobile browser.</p></details>
+    <details><summary>Do I need to install anything?</summary><p>No. The game is built with three.js and loads like a website. Controls and graphics options are in the menu.</p></details>
+    <details><summary>Can I play on my phone?</summary><p>Yes. Choose <b>Mobile / touch</b> on the operator screen. Landscape orientation is strongly recommended.</p></details>
+    <details><summary>Is this a real conflict?</summary><p>No. HELL ON EARTH is a fictional video game. The soldiers, units and events are fictional and do not represent real persons or events. Voice lines are synthesized.</p></details>
+    <details><summary>Why do soldiers shout when they run out of ammo?</summary><p>Because it is in the design. When a bot or the player empties every magazine, a synthesized voice line calls for a weapon and the unit is resupplied a few seconds later.</p></details>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 54V10h20l8 7 8-7h12v44H42V32l-6 5-6-5v22z" fill="currentColor"/></svg>
+      <div><b>DOG PRODUCTIVE</b><span>A GAME STUDIO · EST. 2026</span></div>
+    </div>
+    <nav class="foot-links">
+      <a href="#overview">Overview</a>
+      <a href="#operators">Operators</a>
+      <a href="#vehicles">Vehicles</a>
+      <a href="play/">Play</a>
+      <a id="repo-link" href="#" rel="noopener">Source</a>
+    </nav>
+  </div>
+  <div class="foot-bottom">
+    <p>© 2026 Dog Productive. HELL ON EARTH is a fictional video game. All soldiers, units, places and events depicted are fictional. No real persons or conflicts are represented. Voice comms are synthesized.</p>
+    <span class="build">BUILD 0.9.0-BETA</span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
