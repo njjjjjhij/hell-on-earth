@@ -1,0 +1,24 @@
+name: import-source
+on:
+  push:
+    paths:
+      - '.github/workflows/import-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch source bundle
+        run: |
+          curl -fsSL -o /tmp/hoe.zip "https://hoe-source-mirror-guo54b-preview.freebuff.site/hell-on-earth-source.zip"
+          unzip -o /tmp/hoe.zip -d .
+      - name: Commit imported project
+        run: |
+          git config user.name "Dog Productive"
+          git config user.email "dogproductivestudio@users.noreply.github.com"
+          git add -A
+          git commit -m "Import HELL ON EARTH beta 0.9.0 source, website and media"
+          git push origin HEAD:main
